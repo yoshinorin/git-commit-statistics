@@ -1,3 +1,9 @@
+# Install
+
+```sh
+yarn install
+```
+
 # Test
 
 ```sh
