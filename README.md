@@ -1,5 +1,5 @@
 # Test
 
 ```sh
-npm run test
+yarn test
 ```
