@@ -6,12 +6,11 @@ const options = require('./lib/options');
 
 class CommitStatistics {
 
-  constructor(path, options) {
+  constructor(path) {
     if (!path) {
       throw new Error('Repositry required');
     }
     this._path = path;
-    this._options = options;
   }
 
   commandBuilder() {
