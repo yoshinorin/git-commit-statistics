@@ -8,7 +8,7 @@ class CommitStatistics {
 
   constructor(path, options) {
     if (!path) {
-      throw new Error('Repositry resuired');
+      throw new Error('Repositry required');
     }
     this._path = path;
     this._options = options;
