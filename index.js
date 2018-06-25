@@ -13,16 +13,30 @@ class CommitStatistics {
     this._path = path;
   }
 
-  commandBuilder() {
-    this._command = "";
-    this._command = `git --git-dir ${this._path}`
+  /**
+   * Command builder for git log.
+   *
+   * @param {Object} opts git log options
+   */
+  commandBuilder(opts) {
+    let command = "";
+    command = `git --git-dir ${this._path} --oneline --pretty=format:"%cd" --reverse`
 
-    if (!this._options) {
-      return this._command;
+    if (opts === undefined) {
+      return command;
     }
 
+    Object.entries(opts).forEach(opt => {
+      let x = options.list.find(function(v) {
+        return v === opt[0];
+      });
+      if (x === undefined) {
+        throw new Error(`Option ${opt[0]} is invalid.`);
+      }
+      command += ` --${opt[0]}="${opt[1]}"`;
+    });
 
-    return this._command;
+    return command;
   }
 
 }
