@@ -1,8 +1,8 @@
 'use strict';
 
-const MONTHS = require('./lib/MONTHS');
-const WEEKDAY = require('./lib/WEEKDAY');
-const OPTIONS = require('./lib/OPTIONS');
+const months = require('./lib/months');
+const weekday = require('./lib/weekday');
+const options = require('./lib/options');
 
 class CommitStatistics {
 
@@ -15,7 +15,6 @@ class CommitStatistics {
   }
 
   commandBuilder() {
-
     this._command = "";
     this._command = `git --git-dir ${this._path}`
 
