@@ -6,6 +6,11 @@ const options = require('./lib/options');
 
 class CommitStatistics {
 
+  /**
+   * Constructor
+   *
+   * @param {string} path Git directory path.
+   */
   constructor(path) {
     if (!path) {
       throw new Error('Repositry required');
