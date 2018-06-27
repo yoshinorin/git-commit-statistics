@@ -3,6 +3,7 @@
 const months = require('./lib/months');
 const weekday = require('./lib/weekday');
 const options = require('./lib/options');
+const commands = require('./lib/commands');
 
 class CommitStatistics {
 
@@ -25,7 +26,7 @@ class CommitStatistics {
    */
   commandBuilder(opts) {
     let command = "";
-    command = `git --git-dir ${this._path} --oneline --pretty=format:"%cd" --reverse`
+    command = commands.basic;
 
     if (opts === undefined) {
       return command;
