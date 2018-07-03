@@ -3,16 +3,19 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "jest"
-  },
   "repository": {
     "type": "git",
     "url": ""
   },
   "author": "YoshinoriN",
   "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "eslint": "node ./node_modules/eslint/bin/eslint"
+  },
   "devDependencies": {
+    "eslint": "^5.0.1",
+    "eslint-config-google": "^0.9.1",
     "jest": "^23.1.0"
   }
 }

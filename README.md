@@ -9,3 +9,9 @@ yarn install
 ```sh
 yarn test
 ```
+
+# ESLint
+
+```sh
+yarn eslint [options]
+```
