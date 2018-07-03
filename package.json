@@ -17,5 +17,8 @@
     "eslint": "^5.0.1",
     "eslint-config-google": "^0.9.1",
     "jest": "^23.1.0"
+  },
+  "engines": {
+    "node": "^8.10.0"
   }
 }
