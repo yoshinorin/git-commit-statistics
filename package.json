@@ -14,8 +14,9 @@
     "eslint": "node ./node_modules/eslint/bin/eslint"
   },
   "devDependencies": {
-    "eslint": "^5.0.1",
-    "eslint-config-google": "^0.9.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.13.0",
     "jest": "^23.1.0"
   },
   "engines": {
