@@ -65,7 +65,7 @@ const type = {
 
 function create(type, path, opts) {
   let commandSet = getCommamdSet(type.commandBase);
-  let command = commandSet.baseCommand + ` ${path}`;
+  let command = commandSet.baseCommand + ` ${path}` + ' log ';
 
   if (opts === undefined) {
     return command += ' ' + commandSet.defaultOptions;
@@ -74,7 +74,7 @@ function create(type, path, opts) {
   Object.entries(opts).forEach(opt => {
     command += ' ' + createOption(opt[0], opt[1], commandSet.options);
   });
-  return command;
+  return command += ' ' + commandSet.defaultOptions;
 }
 
 function createOption(key, value, enableOptions) {
