@@ -33,24 +33,24 @@ const commandSet = {
 }
 
 const type = {
-  byPerWeekDay: {
-    type: STATISTICS_TYPE.BY_PER_WEEK_DAY,
+  byPerMonth: {
+    type: STATISTICS_TYPE.BY_PER_MONTH,
+    commandBase: COMMAND_BASE.BASIC
+  },
+  byPerDayOfMonth: {
+    type: STATISTICS_TYPE.BY_PER_DAY_OF_MONTH,
     commandBase: COMMAND_BASE.BASIC
   },
   byPerWeek: {
     type: STATISTICS_TYPE.BY_PER_WEEK,
     commandBase: COMMAND_BASE.BASIC
   },
-  byPerMonth: {
-    type: STATISTICS_TYPE.BY_PER_MONTH,
+  byPerWeekDay: {
+    type: STATISTICS_TYPE.BY_PER_WEEK_DAY,
     commandBase: COMMAND_BASE.BASIC
   },
   byPerYear: {
     type: STATISTICS_TYPE.BY_PER_YEAR,
-    commandBase: COMMAND_BASE.BASIC
-  },
-  byPerDayOfMonth: {
-    type: STATISTICS_TYPE.BY_PER_DAY_OF_MONTH,
     commandBase: COMMAND_BASE.BASIC
   },
   summaryByAuthor: {
