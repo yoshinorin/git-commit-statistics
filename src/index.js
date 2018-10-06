@@ -2,7 +2,7 @@
 
 const months = require('./lib/months');
 const weekday = require('./lib/weekday');
-const commands = require('./lib/command');
+const command = require('./lib/command');
 
 class CommitStatistics {
 
@@ -17,6 +17,13 @@ class CommitStatistics {
     }
     this._path = path;
   }
+
+  commandExecuter(type, opts) {
+    let exec = require('child_process').execSync;
+    let result = exec(command.create(type, this._path, opts), { maxBuffer: 1024 * 1024 });
+    return result.toString();
+  }
+
 }
 
 module.exports = CommitStatistics;
