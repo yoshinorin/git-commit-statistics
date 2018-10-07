@@ -15,3 +15,5 @@ Thumbs.db
 # Front end
 **/node_modules/*
 **/dist/*
+
+/package-lock.json
