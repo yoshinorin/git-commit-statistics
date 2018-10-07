@@ -17,7 +17,7 @@ const STATISTICS_TYPE = {
   SUMMARY_BY_COMMITTER: 6
 }
 
-const commandSet = {
+const commandTypes = {
   basic: {
     id: COMMAND_BASE.BASIC,
     baseCommand: 'git --git-dir',
@@ -64,17 +64,29 @@ const type = {
 }
 
 function create(type, path, opts) {
-  let commandSet = getCommamdSet(type.commandBase);
-  let command = commandSet.baseCommand + ` ${path}` + ' log';
+  let commandType;
+  let command;
+  switch (type.commandBase) {
+    case COMMAND_BASE.BASIC:
+      commandType = commandTypes.basic;
+      command = commandType.baseCommand + ` ${path}` + ' log';
+      break;
+    case COMMAND_BASE.SHORTLOG:
+      commandType = commandTypes.shortlog;
+      command = commandType.baseCommand + ` ${path}`;
+      break;
+    default:
+      throw new Error("Unknown command base.");
+  }
 
   if (opts === undefined) {
-    return command += ' ' + commandSet.defaultOptions;
+    return command += ' ' + commandType.defaultOptions;
   }
 
   Object.entries(opts).forEach(opt => {
-    command += ' ' + createOption(opt[0], opt[1], commandSet.options);
+    command += ' ' + createOption(opt[0], opt[1], commandType.options);
   });
-  return command += ' ' + commandSet.defaultOptions;
+  return command += ' ' + commandType.defaultOptions;
 }
 
 function createOption(key, value, enableOptions) {
@@ -96,17 +108,6 @@ function createOption(key, value, enableOptions) {
 
   if (x[1].argumentType === "boolean" && value) {
     return x[1].command;
-  }
-}
-
-function getCommamdSet(commandBase) {
-  switch (commandBase) {
-    case COMMAND_BASE.BASIC:
-      return commandSet.basic;
-    case COMMAND_BASE.SHORTLOG:
-      return commandSet.shortlog;
-    default:
-      throw new Error("Unknown command base.");
   }
 }
 
