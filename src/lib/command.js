@@ -64,29 +64,33 @@ const type = {
 }
 
 function create(type, path, opts) {
+
   let commandType;
   let command;
   switch (type.commandBase) {
     case COMMAND_BASE.BASIC:
       commandType = commandTypes.basic;
       command = commandType.baseCommand + ` ${path}` + ' log';
-      break;
+      if (opts === undefined) {
+        return command += ' ' + commandType.defaultOptions;
+      }
+      Object.entries(opts).forEach(opt => {
+        command += ' ' + createOption(opt[0], opt[1], commandType.options);
+      });
+      return command += ' ' + commandType.defaultOptions;
     case COMMAND_BASE.SHORTLOG:
       commandType = commandTypes.shortlog;
-      command = commandType.baseCommand + ` ${path}`;
-      break;
+      command = commandType.baseCommand + ` ${path} ` + commandType.defaultOptions;
+      if (opts === undefined) {
+        return command;
+      }
+      Object.entries(opts).forEach(opt => {
+        command += ' ' + createOption(opt[0], opt[1], commandType.options);
+      });
+      return command;
     default:
       throw new Error("Unknown command base.");
   }
-
-  if (opts === undefined) {
-    return command += ' ' + commandType.defaultOptions;
-  }
-
-  Object.entries(opts).forEach(opt => {
-    command += ' ' + createOption(opt[0], opt[1], commandType.options);
-  });
-  return command += ' ' + commandType.defaultOptions;
 }
 
 function createOption(key, value, enableOptions) {
