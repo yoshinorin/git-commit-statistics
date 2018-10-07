@@ -23,6 +23,10 @@ class CommitStatistics {
     return exec(command.create(type, this._path, opts), { maxBuffer: 1024 * 1024 });
   }
 
+  commandExecuteResultToArray(line) {
+    return line.toString().split('\n');
+  }
+
 }
 
 module.exports = CommitStatistics;
