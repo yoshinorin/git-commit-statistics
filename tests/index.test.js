@@ -7,11 +7,13 @@ test('Repositry required Exception', () => {
 });
 
 test('Command executer test', () => {
+  // Dummy path
   let cs = new CommitStatistics("tests");
   expect(cs.commandExecuter('echo test command').toString()).toContain('test command');
 });
 
 test('Command result to array', () => {
+  // Dummy path
   let cs = new CommitStatistics("tests");
   expect(
     cs.commandExecuteResultToArray(
