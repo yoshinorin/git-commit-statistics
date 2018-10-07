@@ -18,9 +18,9 @@ class CommitStatistics {
     this._path = path;
   }
 
-  commandExecuter(type, opts) {
+  commandExecuter(command) {
     let exec = require('child_process').execSync;
-    return exec(command.create(type, this._path, opts), { maxBuffer: 1024 * 1024 });
+    return exec(command, { maxBuffer: 1024 * 1024 });
   }
 
   commandExecuteResultToArray(line) {

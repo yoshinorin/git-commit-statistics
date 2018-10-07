@@ -6,6 +6,11 @@ test('Repositry required Exception', () => {
   }).toThrowError('Repositry required');
 });
 
+test('Command executer test', () => {
+  let cs = new CommitStatistics("tests");
+  expect(cs.commandExecuter('echo test command').toString()).toContain('test command');
+});
+
 test('Command result to array', () => {
   let cs = new CommitStatistics("tests");
   expect(
