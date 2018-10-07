@@ -23,3 +23,11 @@ test('Create basic shortlog command', () => {
     .toBe("git --git-dir /test/example/.git shortlog -s -n");
 });
 
+let shortOpts = {
+  c: true
+}
+
+test('Create basic shortlog command with option', () => {
+  expect(command.create(command.type.summaryByCommitter, '/test/example/.git', shortOpts))
+    .toBe("git --git-dir /test/example/.git shortlog -s -n -c");
+});
