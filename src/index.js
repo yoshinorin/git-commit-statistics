@@ -1,7 +1,5 @@
 'use strict';
 
-const months = require('./lib/months');
-const weekday = require('./lib/weekday');
 const command = require('./lib/command');
 
 class CommitStatistics {
