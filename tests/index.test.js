@@ -25,3 +25,20 @@ test('Command result to array', () => {
   ).toHaveLength(4)
 });
 
+test('Parse shortlog with double whitespace', () => {
+  // Dummy path
+  let cs = new CommitStatistics("tests");
+  expect(cs.parseShortLog('52  YoshinoriN')).toEqual({ author: 'YoshinoriN', commits: '52' })
+});
+
+test('Parse shortlog with single whitespace', () => {
+  // Dummy path
+  let cs = new CommitStatistics("tests");
+  expect(cs.parseShortLog('52 YoshinoriN')).toEqual({ author: 'YoshinoriN', commits: '52' })
+});
+
+test('Parse shortlog with triple whitespace and both ends spaces', () => {
+  // Dummy path
+  let cs = new CommitStatistics("tests");
+  expect(cs.parseShortLog(' 52   YoshinoriN ')).toEqual({ author: 'YoshinoriN', commits: '52' })
+});

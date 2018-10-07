@@ -27,6 +27,14 @@ class CommitStatistics {
     return line.toString().split('\n');
   }
 
+  parseShortLog(array) {
+    const line = array.match(/\S+/g);
+    return {
+      author: line[1],
+      commits: line[0]
+    }
+  }
+
 }
 
 module.exports = CommitStatistics;
