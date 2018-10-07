@@ -28,7 +28,7 @@ test('Command result to array', () => {
 test('Parse git log', () => {
   // Dummy path
   let cs = new CommitStatistics("tests");
-  expect(cs.parseLog('Sat Jun 23 00:34:46 2018'))
+  expect(cs.parseGitLogByLine('Sat Jun 23 00:34:46 2018'))
   .toEqual(
     {
       year: '2018',
@@ -43,17 +43,17 @@ test('Parse git log', () => {
 test('Parse git shortlog with double whitespace', () => {
   // Dummy path
   let cs = new CommitStatistics("tests");
-  expect(cs.parseShortLog('52  YoshinoriN')).toEqual({ author: 'YoshinoriN', commits: '52' })
+  expect(cs.parseGitShortLogByLine('52  YoshinoriN')).toEqual({ author: 'YoshinoriN', commits: '52' })
 });
 
 test('Parse git shortlog with single whitespace', () => {
   // Dummy path
   let cs = new CommitStatistics("tests");
-  expect(cs.parseShortLog('52 YoshinoriN')).toEqual({ author: 'YoshinoriN', commits: '52' })
+  expect(cs.parseGitShortLogByLine('52 YoshinoriN')).toEqual({ author: 'YoshinoriN', commits: '52' })
 });
 
 test('Parse git shortlog with triple whitespace and both ends spaces', () => {
   // Dummy path
   let cs = new CommitStatistics("tests");
-  expect(cs.parseShortLog(' 52   YoshinoriN ')).toEqual({ author: 'YoshinoriN', commits: '52' })
+  expect(cs.parseGitShortLogByLine(' 52   YoshinoriN ')).toEqual({ author: 'YoshinoriN', commits: '52' })
 });

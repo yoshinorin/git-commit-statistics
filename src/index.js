@@ -27,7 +27,7 @@ class CommitStatistics {
     return line.toString().split('\n');
   }
 
-  parseLog(line) {
+  parseGitLogByLine(line) {
     const arr = line.match(/\S+/g);
     return {
       year: arr[4],
@@ -38,11 +38,11 @@ class CommitStatistics {
     }
   }
 
-  parseShortLog(array) {
-    const line = array.match(/\S+/g);
+  parseGitShortLogByLine(line) {
+    const arr = line.match(/\S+/g);
     return {
-      author: line[1],
-      commits: line[0]
+      author: arr[1],
+      commits: arr[0]
     }
   }
 
