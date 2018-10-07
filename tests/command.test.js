@@ -17,3 +17,9 @@ test('Create basic command with option', () => {
   expect(command.create(command.type.byPerWeek, '/test/example/.git', opts))
     .toBe("git --git-dir /test/example/.git log --author=\"YoshinoriN\" --since=\"2017-01-01\" --after=\"2018-01-01\" -n=\"10\" --no-merges --oneline --pretty=format:\"%cd\" --reverse");
 });
+
+test('Create basic shortlog command', () => {
+  expect(command.create(command.type.summaryByAuthor, '/test/example/.git'))
+    .toBe("git --git-dir /test/example/.git shortlog -s -n");
+});
+
