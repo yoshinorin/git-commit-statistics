@@ -25,6 +25,21 @@ test('Command result to array', () => {
   ).toHaveLength(4)
 });
 
+test('Parse git log', () => {
+  // Dummy path
+  let cs = new CommitStatistics("tests");
+  expect(cs.parseLog('Sat Jun 23 00:34:46 2018'))
+  .toEqual(
+    {
+      year: '2018',
+      month: 'Jun',
+      day: '23',
+      hour: '00',
+      dayOfWeek: 'Sat'
+    }
+  )
+});
+
 test('Parse shortlog with double whitespace', () => {
   // Dummy path
   let cs = new CommitStatistics("tests");
