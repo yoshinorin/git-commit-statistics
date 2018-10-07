@@ -2,7 +2,7 @@
 
 const options = require('./options');
 
-const COMMAND_BASE = {
+const COMMAND_BASE_TYPE = {
   BASIC: 0,
   SHORTLOG: 1
 }
@@ -19,13 +19,13 @@ const STATISTICS_TYPE = {
 
 const commandTypes = {
   basic: {
-    id: COMMAND_BASE.BASIC,
+    id: COMMAND_BASE_TYPE.BASIC,
     baseCommand: 'git --git-dir',
     defaultOptions: '--oneline --pretty=format:"%cd" --reverse',
     options: options.basic
   },
   shortlog: {
-    id: COMMAND_BASE.SHORTLOG,
+    id: COMMAND_BASE_TYPE.SHORTLOG,
     baseCommand: 'git --git-dir',
     defaultOptions: 'shortlog -s -n',
     options: options.shortlog
@@ -35,31 +35,31 @@ const commandTypes = {
 const type = {
   byPerMonth: {
     type: STATISTICS_TYPE.BY_PER_MONTH,
-    commandBase: COMMAND_BASE.BASIC
+    commandBase: COMMAND_BASE_TYPE.BASIC
   },
   byPerDayOfMonth: {
     type: STATISTICS_TYPE.BY_PER_DAY_OF_MONTH,
-    commandBase: COMMAND_BASE.BASIC
+    commandBase: COMMAND_BASE_TYPE.BASIC
   },
   byPerWeek: {
     type: STATISTICS_TYPE.BY_PER_WEEK,
-    commandBase: COMMAND_BASE.BASIC
+    commandBase: COMMAND_BASE_TYPE.BASIC
   },
   byPerWeekDay: {
     type: STATISTICS_TYPE.BY_PER_WEEK_DAY,
-    commandBase: COMMAND_BASE.BASIC
+    commandBase: COMMAND_BASE_TYPE.BASIC
   },
   byPerYear: {
     type: STATISTICS_TYPE.BY_PER_YEAR,
-    commandBase: COMMAND_BASE.BASIC
+    commandBase: COMMAND_BASE_TYPE.BASIC
   },
   summaryByAuthor: {
     type: STATISTICS_TYPE.SUMMARY_BY_AUTHOR,
-    commandBase: COMMAND_BASE.SHORTLOG
+    commandBase: COMMAND_BASE_TYPE.SHORTLOG
   },
   summaryByCommitter: {
     type: STATISTICS_TYPE.SUMMARY_BY_COMMITTER,
-    commandBase: COMMAND_BASE.SHORTLOG
+    commandBase: COMMAND_BASE_TYPE.SHORTLOG
   }
 }
 
@@ -68,7 +68,7 @@ function create(type, path, opts) {
   let commandType;
   let command;
   switch (type.commandBase) {
-    case COMMAND_BASE.BASIC:
+    case COMMAND_BASE_TYPE.BASIC:
       commandType = commandTypes.basic;
       command = commandType.baseCommand + ` ${path}` + ' log';
       if (opts === undefined) {
@@ -78,7 +78,7 @@ function create(type, path, opts) {
         command += ' ' + createOption(opt[0], opt[1], commandType.options);
       });
       return command += ' ' + commandType.defaultOptions;
-    case COMMAND_BASE.SHORTLOG:
+    case COMMAND_BASE_TYPE.SHORTLOG:
       commandType = commandTypes.shortlog;
       command = commandType.baseCommand + ` ${path} ` + commandType.defaultOptions;
       if (opts === undefined) {
