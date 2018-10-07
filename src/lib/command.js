@@ -75,7 +75,10 @@ function create(type, path, opts) {
         return command += ' ' + commandType.defaultOptions;
       }
       Object.entries(opts).forEach(opt => {
-        command += ' ' + createOption(opt[0], opt[1], commandType.options);
+        let option = createOption(opt[0], opt[1], commandType.options);
+        if (option !== undefined) {
+          command += ' ' + option;
+        }
       });
       return command += ' ' + commandType.defaultOptions;
     case COMMAND_BASE_TYPE.SHORTLOG:
@@ -85,7 +88,10 @@ function create(type, path, opts) {
         return command;
       }
       Object.entries(opts).forEach(opt => {
-        command += ' ' + createOption(opt[0], opt[1], commandType.options);
+        let option = createOption(opt[0], opt[1], commandType.options);
+        if (option !== undefined) {
+          command += ' ' + option;
+        }
       });
       return command;
     default:
