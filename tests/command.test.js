@@ -5,17 +5,20 @@ test('Create basic command', () => {
     .toBe("git --git-dir /test/example/.git log --oneline --pretty=format:\"%cd\" --reverse");
 });
 
-let opts = {
-  author: "YoshinoriN",
-  since: '2017-01-01',
-  after: '2018-01-01',
-  n: 10,
-  noMerges: true
-}
-
 test('Create basic command with option', () => {
-  expect(command.create(command.type.byPerWeek, '/test/example/.git', opts))
-    .toBe("git --git-dir /test/example/.git log --author=\"YoshinoriN\" --since=\"2017-01-01\" --after=\"2018-01-01\" -n=\"10\" --no-merges --oneline --pretty=format:\"%cd\" --reverse");
+  expect(
+    command.create(
+      command.type.byPerWeek,
+      '/test/example/.git',
+      {
+        author: "YoshinoriN",
+        since: '2017-01-01',
+        after: '2018-01-01',
+        n: 10,
+        noMerges: true
+      }
+    )
+  ).toBe("git --git-dir /test/example/.git log --author=\"YoshinoriN\" --since=\"2017-01-01\" --after=\"2018-01-01\" -n=\"10\" --no-merges --oneline --pretty=format:\"%cd\" --reverse");
 });
 
 test('Create basic shortlog command', () => {
@@ -23,11 +26,7 @@ test('Create basic shortlog command', () => {
     .toBe("git --git-dir /test/example/.git shortlog -s -n");
 });
 
-let shortOpts = {
-  c: true
-}
-
 test('Create basic shortlog command with option', () => {
-  expect(command.create(command.type.summaryByCommitter, '/test/example/.git', shortOpts))
+  expect(command.create(command.type.summaryByCommitter, '/test/example/.git', {c: true}))
     .toBe("git --git-dir /test/example/.git shortlog -s -n -c");
 });
