@@ -22,7 +22,11 @@ class CommitStatistics {
   }
 
   commandExecuteResultToArray(line) {
-    return line.toString().split('\n');
+    const str = line.toString().trim();
+    if (str.length === 0) {
+      return [];
+    }
+    return str.split('\n');
   }
 
   parseGitLogByLine(line) {

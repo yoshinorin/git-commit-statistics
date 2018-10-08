@@ -25,6 +25,12 @@ test('Command result to array', () => {
   ).toHaveLength(4)
 });
 
+test('Command result to array only whitespace', () => {
+  // Dummy path
+  let cs = new CommitStatistics("tests");
+  expect(cs.commandExecuteResultToArray(' ')).toEqual([]);
+});
+
 test('Parse git log', () => {
   // Dummy path
   let cs = new CommitStatistics("tests");
