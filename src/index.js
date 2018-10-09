@@ -2,6 +2,7 @@
 
 const command = require('./lib/command');
 const util = require('./lib/utils');
+const aggregate = require('./lib/aggregate');
 
 class CommitStatistics {
 
@@ -36,19 +37,6 @@ class CommitStatistics {
     }
   }
 
-  groupBy(list, field) {
-    return list.reduce((result, current) => {
-      const y = result.find((x) => x[field] === current[field]);
-      if (y) {
-        y.count ++;
-      } else {
-        result.push({
-          [field]: current[field],
-          count: 1
-        });
-      }
-      return result;
-    }, []);
   }
 
 }
