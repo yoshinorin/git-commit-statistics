@@ -121,7 +121,13 @@ function createOption(key, value, enableOptions) {
   }
 }
 
+function execute(command) {
+  const exec = require('child_process').execSync;
+  return exec(command, { maxBuffer: 1024 * 1024 });
+}
+
 module.exports = {
   create: create,
-  type: type
+  type: type,
+  execute: execute
 };

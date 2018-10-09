@@ -1,6 +1,7 @@
 'use strict';
 
 const command = require('./lib/command');
+const util = require('./lib/utils');
 
 class CommitStatistics {
 
@@ -14,19 +15,6 @@ class CommitStatistics {
       throw new Error('Repositry required');
     }
     this._path = path;
-  }
-
-  commandExecuter(command) {
-    let exec = require('child_process').execSync;
-    return exec(command, { maxBuffer: 1024 * 1024 });
-  }
-
-  commandExecuteResultToArray(line) {
-    const str = line.toString().trim();
-    if (str.length === 0) {
-      return [];
-    }
-    return str.split('\n');
   }
 
   parseGitLogByLine(line) {

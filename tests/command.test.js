@@ -46,3 +46,7 @@ test('Create basic shortlog command with option', () => {
   expect(command.create(command.type.summaryByCommitter, '/test/example/.git', {c: true}))
     .toBe("git --git-dir /test/example/.git shortlog -s -n -c");
 });
+
+test('Execute command', () => {
+  expect(command.execute('echo test command').toString()).toContain('test command');
+});
