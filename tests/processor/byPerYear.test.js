@@ -1,4 +1,4 @@
-const ByPerYear = require('../../src/lib/processor/ByPerYear');
+const ByPerYear = require('../../src/lib/processor/byPerYear');
 
 test('Repositry required Exception', () => {
   expect(ex = () => {
