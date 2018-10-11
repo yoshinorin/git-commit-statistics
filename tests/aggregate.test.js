@@ -1,8 +1,8 @@
-const CommitStatistics = require('../src/index');
 const aggregate = require('../src/lib/aggregate');
+const BaseProcessor = require('../src/lib/processor/baseProcessor');
 
 // Dummy path
-const cs = new CommitStatistics("tests");
+const baseProcessor = new BaseProcessor("tests");
 
 // Group by tests
 const logs = [
@@ -17,7 +17,7 @@ const logs = [
 
 let testData = [];
 logs.forEach(log => {
-  testData.push(cs.parseGitLogByLine(log))
+  testData.push(baseProcessor.parseGitLog(log))
 });
 
 test('Git log group by month', () => {
