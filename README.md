@@ -5,17 +5,18 @@
 # Install
 
 ```sh
-yarn install
+$ yarn install
 ```
 
-# Test
+# Test & Coverage
 
 ```sh
-yarn test
+$ yarn test
+$ yarn run test --coverage
 ```
 
 # ESLint
 
 ```sh
-yarn eslint [options]
+$ yarn eslint [options]
 ```
