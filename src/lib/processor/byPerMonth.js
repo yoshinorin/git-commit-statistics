@@ -2,11 +2,12 @@
 
 const aggregate = require('../aggregate');
 const BaseProcessor = require('./baseProcessor');
+const command = require('../command');
 
 class ByPerMonth extends BaseProcessor {
 
   constructor(path, commandType, options) {
-    super(path, commandType, options);
+    super(path, command.type.byPerMonth, options);
   }
 
   createResult() {

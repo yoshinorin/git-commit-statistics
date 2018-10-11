@@ -2,11 +2,12 @@
 
 const aggregate = require('../aggregate');
 const BaseProcessor = require('./baseProcessor');
+const command = require('../command');
 
 class ByPerWeekDay extends BaseProcessor {
 
-  constructor(path, commandType, options) {
-    super(path, commandType, options);
+  constructor(path, options) {
+    super(path, command.type.byPerWeekDay, options);
   }
 
   createResult() {
