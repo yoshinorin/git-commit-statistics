@@ -18,12 +18,21 @@ class CommitStatistics {
     this._path = path;
   }
 
+  getByPerMonth(opts) {
+    //TODO
   }
 
+  getByPerDayOfMonth(opts) {
+    //TODO
   }
 
+  getByPerWeekDay(opts) {
+    //TODO
   }
 
+  getByYear(opts) {
+    //TODO
+  }
 }
 
 module.exports = CommitStatistics;
