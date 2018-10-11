@@ -3,6 +3,8 @@
 const command = require('./lib/command');
 const util = require('./lib/utils');
 const aggregate = require('./lib/aggregate');
+const processorFactory = require('./lib/processor/processorFactory');
+const statisticsTypes = require('./lib/types/statisticsTypes');
 
 class CommitStatistics {
 
@@ -18,20 +20,24 @@ class CommitStatistics {
     this._path = path;
   }
 
-  getByPerMonth(opts) {
-    //TODO
+  getByPerDayOfMonth(options) {
+    const instance = processorFactory.createInstance(this._path, statisticsTypes.BY_PER_DAY_OF_MONTH, options);
+    return instance.createResult();
   }
 
-  getByPerDayOfMonth(opts) {
-    //TODO
+  getByPerMonth(options) {
+    const instance = processorFactory.createInstance(this._path, statisticsTypes.BY_PER_MONTH, options);
+    return instance.createResult();
   }
 
-  getByPerWeekDay(opts) {
-    //TODO
+  getByPerWeekDay(options) {
+    const instance = processorFactory.createInstance(this._path, statisticsTypes.BY_PER_WEEK_DAY, options);
+    return instance.createResult();
   }
 
-  getByYear(opts) {
-    //TODO
+  getByPerYear(options) {
+    const instance = processorFactory.createInstance(this._path, statisticsTypes.BY_PER_YEAR, options);
+    return instance.createResult();
   }
 }
 
