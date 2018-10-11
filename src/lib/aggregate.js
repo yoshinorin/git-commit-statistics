@@ -1,18 +1,20 @@
 'use strict';
 
 function groupBy(list, field) {
-  return list.reduce((result, current) => {
-    const y = result.find((x) => x[field] === current[field]);
-    if (y) {
-      y.count ++;
-    } else {
-      result.push({
-        [field]: current[field],
-        count: 1
-      });
+  let result = [];
+
+  for (let e of list) {
+    let target = result.find(x => x[field] === e[field]);
+    if (target) {
+      target.count++;
+      continue;
     }
-    return result;
-  }, []);
+    result.push({
+      [field]: e[field],
+      count: 1
+    });
+  }
+  return result
 }
 
 module.exports = {
