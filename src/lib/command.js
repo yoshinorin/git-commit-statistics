@@ -1,20 +1,11 @@
 'use strict';
 
 const options = require('./options');
+const statisticsTypes = require('./types/statisticsTypes');
 
 const COMMAND_BASE_TYPE = {
   BASIC: 0,
   SHORTLOG: 1
-}
-
-const STATISTICS_TYPE = {
-  BY_PER_WEEK_DAY: 0,
-  BY_PER_WEEK: 1,
-  BY_PER_MONTH: 2,
-  BY_PER_YEAR: 3,
-  BY_PER_DAY_OF_MONTH: 4,
-  SUMMARY_BY_AUTHOR: 5,
-  SUMMARY_BY_COMMITTER: 6
 }
 
 const commandTypes = {
@@ -34,31 +25,31 @@ const commandTypes = {
 
 const type = {
   byPerMonth: {
-    type: STATISTICS_TYPE.BY_PER_MONTH,
+    type: statisticsTypes.BY_PER_MONTH,
     commandBase: COMMAND_BASE_TYPE.BASIC
   },
   byPerDayOfMonth: {
-    type: STATISTICS_TYPE.BY_PER_DAY_OF_MONTH,
+    type: statisticsTypes.BY_PER_DAY_OF_MONTH,
     commandBase: COMMAND_BASE_TYPE.BASIC
   },
   byPerWeek: {
-    type: STATISTICS_TYPE.BY_PER_WEEK,
+    type: statisticsTypes.BY_PER_WEEK,
     commandBase: COMMAND_BASE_TYPE.BASIC
   },
   byPerWeekDay: {
-    type: STATISTICS_TYPE.BY_PER_WEEK_DAY,
+    type: statisticsTypes.BY_PER_WEEK_DAY,
     commandBase: COMMAND_BASE_TYPE.BASIC
   },
   byPerYear: {
-    type: STATISTICS_TYPE.BY_PER_YEAR,
+    type: statisticsTypes.BY_PER_YEAR,
     commandBase: COMMAND_BASE_TYPE.BASIC
   },
   summaryByAuthor: {
-    type: STATISTICS_TYPE.SUMMARY_BY_AUTHOR,
+    type: statisticsTypes.SUMMARY_BY_AUTHOR,
     commandBase: COMMAND_BASE_TYPE.SHORTLOG
   },
   summaryByCommitter: {
-    type: STATISTICS_TYPE.SUMMARY_BY_COMMITTER,
+    type: statisticsTypes.SUMMARY_BY_COMMITTER,
     commandBase: COMMAND_BASE_TYPE.SHORTLOG
   }
 }
