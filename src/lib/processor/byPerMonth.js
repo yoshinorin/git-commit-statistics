@@ -1,6 +1,6 @@
 'use strict';
 
-const _ = require('lodash');
+const sortBy = require('lodash.sortby');
 const aggregate = require('../aggregate');
 const BaseProcessor = require('./baseProcessor');
 const command = require('../command');
@@ -18,7 +18,7 @@ class ByPerMonth extends BaseProcessor {
 
   sort(list) {
     const mappedList = util.typeMapper(list, 'month', monthTypes.months);
-    return _.sortBy(mappedList, 'id');
+    return sortBy(mappedList, 'id');
   }
 
   parseGitLog(line) {

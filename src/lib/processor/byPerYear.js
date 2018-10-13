@@ -1,6 +1,6 @@
 'use strict';
 
-const _ = require('lodash');
+const sortBy = require('lodash.sortby');
 const aggregate = require('../aggregate');
 const BaseProcessor = require('./baseProcessor');
 const command = require('../command');
@@ -15,7 +15,7 @@ class ByPerYear extends BaseProcessor {
   }
 
   sort(list) {
-    return _.sortBy(list, 'year');
+    return sortBy(list, 'year');
   }
 
   parseGitLog(line) {
