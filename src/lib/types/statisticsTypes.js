@@ -9,4 +9,4 @@ module.exports = {
   BY_PER_DAY_HOUR: 5,
   SUMMARY_BY_AUTHOR: 6,
   SUMMARY_BY_COMMITTER: 7
-}
+};

@@ -2,7 +2,7 @@ const ByPerYear = require('../../src/lib/processor/byPerYear');
 
 test('Repositry required Exception', () => {
   expect(ex = () => {
-    new ByPerYear("")
+    new ByPerYear("");
   }).toThrowError('Repositry required');
 });
 
@@ -15,14 +15,14 @@ test('Parse git log', () => {
     {
       year: 2018
     }
-  )
+  );
 });
 
 const years = [
   { year: 2017, count: 1945 },
   { year: 2011, count: 2323 },
   { year: 2013, count: 2362 }
-]
+];
 
 test('byPerYear sort', () => {
   expect(processor.sort(years))
@@ -32,5 +32,5 @@ test('byPerYear sort', () => {
       { year: 2013, count: 2362 },
       { year: 2017, count: 1945 }
     ]
-  )
+  );
 });

@@ -2,51 +2,51 @@
 
 const basic = {
   author: {
-    command: "--author",
+    command: '--author',
     requiredArgument: true,
-    argumentType: "string"
+    argumentType: 'string'
   },
   since: {
-    command: "--since",
+    command: '--since',
     requiredArgument: true,
-    argumentType: "string"
+    argumentType: 'string'
   },
   after: {
-    command: "--after",
+    command: '--after',
     requiredArgument: true,
-    argumentType: "string"
+    argumentType: 'string'
   },
   until: {
-    command: "--until",
+    command: '--until',
     requiredArgument: true,
-    argumentType: "string"
+    argumentType: 'string'
   },
   before: {
-    command: "--before",
+    command: '--before',
     requiredArgument: true,
-    argumentType: "string"
+    argumentType: 'string'
   },
   n: {
-    command: "-n",
+    command: '-n',
     requiredArgument: true,
-    argumentType: "string"
+    argumentType: 'string'
   },
   noMerges: {
-    command: "--no-merges",
+    command: '--no-merges',
     requiredArgument: false,
-    argumentType: "boolean"
+    argumentType: 'boolean'
   }
-}
+};
 
 const shortlog = {
   c: {
-    command: "-c",
+    command: '-c',
     requiredArgument: false,
-    argumentType: "boolean"
+    argumentType: 'boolean'
   }
-}
+};
 
 module.exports = {
-  basic: basic,
-  shortlog: shortlog
+  basic,
+  shortlog
 };

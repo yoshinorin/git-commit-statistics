@@ -2,7 +2,7 @@ const ByPerDayHour = require('../../src/lib/processor/byPerDayHour');
 
 test('Repositry required Exception', () => {
   expect(ex = () => {
-    new ByPerDayHour("")
+    new ByPerDayHour("");
   }).toThrowError('Repositry required');
 });
 
@@ -15,7 +15,7 @@ test('Parse git log', () => {
     {
       hour: 1
     }
-  )
+  );
 });
 
 const hours = [
@@ -26,7 +26,7 @@ const hours = [
   { hour: 18, count: 1115 },
   { hour: 13, count: 1661 },
   { hour: 2, count: 527 }
-]
+];
 
 test('byPerYear sort', () => {
   expect(processor.sort(hours))
@@ -40,5 +40,5 @@ test('byPerYear sort', () => {
       { hour: 18, count: 1115 },
       { hour: 21, count: 967 }
     ]
-  )
+  );
 });

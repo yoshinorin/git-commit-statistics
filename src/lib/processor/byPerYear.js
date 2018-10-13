@@ -1,12 +1,11 @@
 'use strict';
 
+const _ = require('lodash');
 const aggregate = require('../aggregate');
 const BaseProcessor = require('./baseProcessor');
 const command = require('../command');
-const _ = require('lodash');
 
 class ByPerYear extends BaseProcessor {
-
   constructor(path, options) {
     super(path, command.type.byPerYear, options);
   }
@@ -23,9 +22,8 @@ class ByPerYear extends BaseProcessor {
     const arr = line.match(/\S+/g);
     return {
       year: parseInt(arr[4])
-    }
+    };
   }
-
 }
 
 module.exports = ByPerYear;

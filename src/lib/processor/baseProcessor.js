@@ -24,8 +24,8 @@ class BaseProcessor {
       return logs;
     }
 
-    let list = [];
-    logs.forEach(log => {
+    const list = [];
+    logs.forEach((log) => {
       list.push(this.parseGitLog(log));
     });
 
@@ -44,7 +44,7 @@ class BaseProcessor {
       day: arr[2],
       hour: (arr[3].split(':'))[0],
       dayOfWeek: arr[0]
-    }
+    };
   }
 }
 

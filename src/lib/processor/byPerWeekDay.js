@@ -1,14 +1,13 @@
 'use strict';
 
+const _ = require('lodash');
 const aggregate = require('../aggregate');
 const BaseProcessor = require('./baseProcessor');
 const command = require('../command');
 const weekdayTypes = require('../types/weekdayTypes');
 const util = require('../utils');
-const _ = require('lodash');
 
 class ByPerWeekDay extends BaseProcessor {
-
   constructor(path, options) {
     super(path, command.type.byPerWeekDay, options);
   }
@@ -22,7 +21,7 @@ class ByPerWeekDay extends BaseProcessor {
   }
 
   sort(list) {
-    let mappedList = util.typeMapper(list, 'dayOfWeek', weekdayTypes.weekday);
+    const mappedList = util.typeMapper(list, 'dayOfWeek', weekdayTypes.weekday);
     return _.sortBy(mappedList, 'id');
   }
 
@@ -30,9 +29,8 @@ class ByPerWeekDay extends BaseProcessor {
     const arr = line.match(/\S+/g);
     return {
       dayOfWeek: arr[0]
-    }
+    };
   }
-
 }
 
 module.exports = ByPerWeekDay;

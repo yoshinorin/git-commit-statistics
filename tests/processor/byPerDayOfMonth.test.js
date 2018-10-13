@@ -2,7 +2,7 @@ const ByPerDayOfMonth = require('../../src/lib/processor/byPerDayOfMonth');
 
 test('Repositry required Exception', () => {
   expect(ex = () => {
-    new ByPerDayOfMonth("")
+    new ByPerDayOfMonth("");
   }).toThrowError('Repositry required');
 });
 
@@ -15,15 +15,15 @@ test('Parse git log', () => {
     {
       day: 23
     }
-  )
+  );
 });
 
 const days = [
   { day: 2, count: 2 },
   { day: 1, count: 2 },
   { day: 10, count: 2 },
-  { day: 20, count: 2 },
-]
+  { day: 20, count: 2 }
+];
 
 test('byPerDayOfMonth sort', () => {
   expect(processor.sort(days))
@@ -32,7 +32,7 @@ test('byPerDayOfMonth sort', () => {
       { day: 1, count: 2 },
       { day: 2, count: 2 },
       { day: 10, count: 2 },
-      { day: 20, count: 2 },
+      { day: 20, count: 2 }
     ]
-  )
+  );
 });

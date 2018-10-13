@@ -16,7 +16,7 @@ test('Command result to array', () => {
       'Sun Jun 24 01:28:58 2018 +0900',
       'Sun Jun 24 01:29:36 2018 +0900'
     ]
-  )
+  );
 });
 
 test('Command result to array only whitespace', () => {

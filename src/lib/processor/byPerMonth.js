@@ -1,14 +1,13 @@
 'use strict';
 
+const _ = require('lodash');
 const aggregate = require('../aggregate');
 const BaseProcessor = require('./baseProcessor');
 const command = require('../command');
 const monthTypes = require('../types/monthsTypes');
 const util = require('../utils');
-const _ = require('lodash');
 
 class ByPerMonth extends BaseProcessor {
-
   constructor(path, commandType, options) {
     super(path, command.type.byPerMonth, options);
   }
@@ -18,7 +17,7 @@ class ByPerMonth extends BaseProcessor {
   }
 
   sort(list) {
-    let mappedList = util.typeMapper(list, 'month', monthTypes.months);
+    const mappedList = util.typeMapper(list, 'month', monthTypes.months);
     return _.sortBy(mappedList, 'id');
   }
 
@@ -26,9 +25,8 @@ class ByPerMonth extends BaseProcessor {
     const arr = line.match(/\S+/g);
     return {
       month: arr[1]
-    }
+    };
   }
-
 }
 
 module.exports = ByPerMonth;

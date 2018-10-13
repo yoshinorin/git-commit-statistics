@@ -1,12 +1,11 @@
 'use strict';
 
+const _ = require('lodash');
 const aggregate = require('../aggregate');
 const BaseProcessor = require('./baseProcessor');
 const command = require('../command');
-const _ = require('lodash');
 
 class ByPerDayOfMonth extends BaseProcessor {
-
   constructor(path, options) {
     super(path, command.type.byPerDayOfMonth, options);
   }
@@ -23,9 +22,8 @@ class ByPerDayOfMonth extends BaseProcessor {
     const arr = line.match(/\S+/g);
     return {
       day: parseInt(arr[2])
-    }
+    };
   }
-
 }
 
 module.exports = ByPerDayOfMonth;

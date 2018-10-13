@@ -2,7 +2,7 @@ const ByPerWeekDay = require('../../src/lib/processor/byPerWeekDay');
 
 test('Repositry required Exception', () => {
   expect(ex = () => {
-    new ByPerWeekDay("")
+    new ByPerWeekDay("");
   }).toThrowError('Repositry required');
 });
 
@@ -15,7 +15,7 @@ test('Parse git log', () => {
     {
       dayOfWeek: 'Sat'
     }
-  )
+  );
 });
 
 const months = [
@@ -26,7 +26,7 @@ const months = [
   { dayOfWeek: 'Tue', count: 4179 },
   { dayOfWeek: 'Wed', count: 4146 },
   { dayOfWeek: 'Thu', count: 4108 }
-]
+];
 
 test('byPerWeekDay sort', () => {
   expect(processor.sort(months))
@@ -40,5 +40,5 @@ test('byPerWeekDay sort', () => {
       { dayOfWeek: 'Fri', count: 3765, id: 5 },
       { dayOfWeek: 'Sat', count: 1950, id: 6 }
     ]
-  )
+  );
 });

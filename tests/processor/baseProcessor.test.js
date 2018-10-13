@@ -2,7 +2,7 @@ const BaseProcessor = require('../../src/lib/processor/baseProcessor');
 
 test('Repositry required Exception', () => {
   expect(ex = () => {
-    new BaseProcessor("")
+    new BaseProcessor("");
   }).toThrowError('Repositry required');
 });
 
@@ -19,11 +19,11 @@ test('Parse git log', () => {
       hour: '00',
       dayOfWeek: 'Sat'
     }
-  )
+  );
 });
 
 test('Not implemented Exception', () => {
   expect(ex = () => {
-    expect(baseProcessor.createResult())
+    expect(baseProcessor.createResult());
   }).toThrowError('Not implemented');
 });

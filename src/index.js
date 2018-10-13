@@ -7,7 +7,6 @@ const processorFactory = require('./lib/processor/processorFactory');
 const statisticsTypes = require('./lib/types/statisticsTypes');
 
 class CommitStatistics {
-
   /**
    * Constructor
    *

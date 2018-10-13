@@ -9,14 +9,14 @@ function toArray(line, separator) {
 }
 
 function typeMapper(list, key, types) {
-  return list.map(x => {
-    let obj = types.find(t => t.key === x[key]);
+  return list.map((x) => {
+    const obj = types.find(t => t.key === x[key]);
     x.id = obj.value;
     return x;
   });
 }
 
 module.exports = {
-  toArray: toArray,
-  typeMapper: typeMapper
+  toArray,
+  typeMapper
 };

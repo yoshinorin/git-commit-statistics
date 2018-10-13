@@ -25,5 +25,5 @@ function createInstance(gitDir, type, options) {
 }
 
 module.exports = {
-  createInstance: createInstance
+  createInstance
 };

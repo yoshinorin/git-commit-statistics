@@ -49,8 +49,8 @@ const months = [
     key: 'Dec',
     value: 12
   }
-]
+];
 
 module.exports = {
-  months: months
+  months
 };

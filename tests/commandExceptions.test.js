@@ -2,7 +2,7 @@ const command = require('../src/lib/command');
 
 // Exceptions tests
 test('Throw Unknown command base exception', () => {
-  expect(ex = () => {command.create(999, '/test/example/.git')}).toThrowError('Unknown command base.');
+  expect(ex = () => {command.create(999, '/test/example/.git');}).toThrowError('Unknown command base.');
 });
 
 test('Throw Unknown option c is invalid', () => {
@@ -13,6 +13,6 @@ test('Throw Unknown option c is invalid', () => {
       {
         c: true
       }
-    )
+    );
   }).toThrowError('Option c is invalid.');
 });

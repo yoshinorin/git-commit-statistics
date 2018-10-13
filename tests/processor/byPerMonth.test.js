@@ -2,7 +2,7 @@ const ByPerMonth = require('../../src/lib/processor/byPerMonth');
 
 test('Repositry required Exception', () => {
   expect(ex = () => {
-    new ByPerMonth("")
+    new ByPerMonth("");
   }).toThrowError('Repositry required');
 });
 
@@ -15,7 +15,7 @@ test('Parse git log', () => {
     {
       month: 'Jun'
     }
-  )
+  );
 });
 
 const months = [
@@ -31,7 +31,7 @@ const months = [
   { month: 'Nov', count: 1631 },
   { month: 'Dec', count: 2110 },
   { month: 'Jan', count: 2124 }
-]
+];
 
 test('byPerMonth sort', () => {
   expect(processor.sort(months))
@@ -50,5 +50,5 @@ test('byPerMonth sort', () => {
       { month: 'Nov', count: 1631, id: 11 },
       { month: 'Dec', count: 2110, id: 12 }
     ]
-  )
+  );
 });

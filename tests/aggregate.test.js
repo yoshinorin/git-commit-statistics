@@ -12,12 +12,12 @@ const logs = [
   'Mon Dec 2 01:29:36 2018 +0900',
   'Sat Jun 2 00:34:46 2016 +0900',
   'Sun Dec 11 01:06:52 2018 +0900',
-  'Mon Nov 10 01:06:52 2018 +0900',
-]
+  'Mon Nov 10 01:06:52 2018 +0900'
+];
 
 let testData = [];
 logs.forEach(log => {
-  testData.push(baseProcessor.parseGitLog(log))
+  testData.push(baseProcessor.parseGitLog(log));
 });
 
 test('Git log group by month', () => {
@@ -28,7 +28,7 @@ test('Git log group by month', () => {
       { month: 'Nov', count: 2 },
       { month: 'Dec', count: 2 }
     ]
-  )
+  );
 });
 
 test('Git log group by day of month', () => {
@@ -40,7 +40,7 @@ test('Git log group by day of month', () => {
       { day: '2', count: 2 },
       { day: '11', count: 1 }
     ]
-  )
+  );
 });
 
 test('Git log group by day of week', () => {
@@ -51,7 +51,7 @@ test('Git log group by day of week', () => {
       { dayOfWeek: 'Sun', count: 2 },
       { dayOfWeek: 'Mon', count: 2 }
     ]
-  )
+  );
 });
 
 test('Git log group by year', () => {
@@ -62,5 +62,5 @@ test('Git log group by year', () => {
       { year: '2018', count: 4 },
       { year: '2016', count: 1 }
     ]
-  )
+  );
 });

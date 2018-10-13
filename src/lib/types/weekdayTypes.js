@@ -32,5 +32,5 @@ const weekday = [
 ];
 
 module.exports = {
-  weekday : weekday
-}
+  weekday
+};

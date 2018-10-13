@@ -1,10 +1,10 @@
 'use strict';
 
 function groupBy(list, field) {
-  let result = [];
+  const result = [];
 
-  for (let e of list) {
-    let target = result.find(x => x[field] === e[field]);
+  for (const e of list) {
+    const target = result.find(x => x[field] === e[field]);
     if (target) {
       target.count++;
       continue;
@@ -14,9 +14,9 @@ function groupBy(list, field) {
       count: 1
     });
   }
-  return result
+  return result;
 }
 
 module.exports = {
-  groupBy: groupBy
+  groupBy
 };

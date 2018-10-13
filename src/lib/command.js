@@ -6,7 +6,7 @@ const statisticsTypes = require('./types/statisticsTypes');
 const COMMAND_BASE_TYPE = {
   BASIC: 0,
   SHORTLOG: 1
-}
+};
 
 const commandTypes = {
   basic: {
@@ -21,7 +21,7 @@ const commandTypes = {
     defaultOptions: 'shortlog -s -n',
     options: options.shortlog
   }
-}
+};
 
 const type = {
   byPerMonth: {
@@ -56,49 +56,45 @@ const type = {
     type: statisticsTypes.SUMMARY_BY_COMMITTER,
     commandBase: COMMAND_BASE_TYPE.SHORTLOG
   }
-}
+};
 
 function create(type, path, opts) {
-
   let commandType;
   let command;
   switch (type.commandBase) {
     case COMMAND_BASE_TYPE.BASIC:
       commandType = commandTypes.basic;
-      command = commandType.baseCommand + ` ${path}` + ' log';
+      command = `${commandType.baseCommand} ${path}` + ' log';
       if (opts === undefined) {
-        return command += ' ' + commandType.defaultOptions;
+        return command += ` ${commandType.defaultOptions}`;
       }
-      Object.entries(opts).forEach(opt => {
-        let option = createOption(opt[0], opt[1], commandType.options);
+      Object.entries(opts).forEach((opt) => {
+        const option = createOption(opt[0], opt[1], commandType.options);
         if (option !== undefined) {
-          command += ' ' + option;
+          command += ` ${option}`;
         }
       });
-      return command += ' ' + commandType.defaultOptions;
+      return command += ` ${commandType.defaultOptions}`;
     case COMMAND_BASE_TYPE.SHORTLOG:
       commandType = commandTypes.shortlog;
-      command = commandType.baseCommand + ` ${path} ` + commandType.defaultOptions;
+      command = `${commandType.baseCommand} ${path} ${commandType.defaultOptions}`;
       if (opts === undefined) {
         return command;
       }
-      Object.entries(opts).forEach(opt => {
-        let option = createOption(opt[0], opt[1], commandType.options);
+      Object.entries(opts).forEach((opt) => {
+        const option = createOption(opt[0], opt[1], commandType.options);
         if (option !== undefined) {
-          command += ' ' + option;
+          command += ` ${option}`;
         }
       });
       return command;
     default:
-      throw new Error("Unknown command base.");
+      throw new Error('Unknown command base.');
   }
 }
 
 function createOption(key, value, enableOptions) {
-
-  let x = Object.entries(enableOptions).find(function(kv) {
-    return kv[0] === key;
-  });
+  const x = Object.entries(enableOptions).find(kv => kv[0] === key);
 
   if (x === undefined) {
     throw new Error(`Option ${key} is invalid.`);
@@ -111,7 +107,7 @@ function createOption(key, value, enableOptions) {
     return `${x[1].command}="${value}"`;
   }
 
-  if (x[1].argumentType === "boolean" && value) {
+  if (x[1].argumentType === 'boolean' && value) {
     return x[1].command;
   }
 }
@@ -122,7 +118,7 @@ function execute(command) {
 }
 
 module.exports = {
-  create: create,
-  type: type,
-  execute: execute
+  create,
+  type,
+  execute
 };
