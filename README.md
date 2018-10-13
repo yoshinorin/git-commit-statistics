@@ -60,7 +60,7 @@ Please see [official git document](https://git-scm.com/docs/git-log#_options).
 |after|`string`|'2018-01-01'|
 |until|`string`|'2018-01-01'|
 |before|`string`|'2018-01-01'|
-|n|`string`|'100'|
+|maxCount|`number`|100|
 |noMerges|`boolean`|true|
 
 ## Examples of Result

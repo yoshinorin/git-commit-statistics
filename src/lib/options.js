@@ -26,10 +26,10 @@ const basic = {
     requiredArgument: true,
     argumentType: 'string'
   },
-  n: {
-    command: '-n',
+  maxCount: {
+    command: '--max-count',
     requiredArgument: true,
-    argumentType: 'string'
+    argumentType: 'number'
   },
   noMerges: {
     command: '--no-merges',
