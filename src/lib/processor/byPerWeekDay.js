@@ -13,10 +13,6 @@ class ByPerWeekDay extends BaseProcessor {
   }
 
   createResult() {
-    return aggregate.groupBy(this.createObjects(), 'dayOfWeek');
-  }
-
-  createResult() {
     return this.sort(aggregate.groupBy(this.createObjects(), 'dayOfWeek'));
   }
 
