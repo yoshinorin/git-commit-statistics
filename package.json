@@ -1,14 +1,26 @@
 {
   "name": "git-commit-statistics",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.1.0",
+  "description": "Get commits statistics about git repository",
+  "main": "./src/index.js",
+  "license": "MIT",
+  "author": {
+    "name": "YoshinoriN",
+    "email": "yoshinorin.net@outlook.com",
+    "url": "https://yoshinorin.net"
+  },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/YoshinoriN/git-commit-statistics"
   },
-  "author": "YoshinoriN",
-  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/YoshinoriN/git-commit-statistics/issues"
+  },
+  "keywords": [
+    "git",
+    "commit",
+    "statistics"
+  ],
   "scripts": {
     "test": "jest",
     "eslint": "eslint ."
