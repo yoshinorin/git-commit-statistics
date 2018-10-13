@@ -1,22 +1,24 @@
 # git-commit-statistics
 
+[![NPM version](https://badge.fury.io/js/git-commit-statistics.svg)](https://www.npmjs.com/package/git-commit-statistics)
 [![Build Status](https://travis-ci.org/YoshinoriN/git-commit-statistics.svg?branch=master)](https://travis-ci.org/YoshinoriN/git-commit-statistics) [![Coverage Status](https://coveralls.io/repos/github/YoshinoriN/git-commit-statistics/badge.svg?branch=master)](https://coveralls.io/github/YoshinoriN/git-commit-statistics?branch=master)
 
 Get commits statistics about git repository.
 
 ## Features
 
-Get belows statistics.
+Get belows statistics. Example is [here](#getbyperdayofmonth).
 
-* byPerDayHour
 * byPerDayOfMonth
+* byPerMonth
 * byPerWeekDays
 * byPerYear
+* byPerDayHour
 
 ## Installation
 
 ```sh
-npm install git-commit-statistics
+$ npm install git-commit-statistics
 ```
 
 ## Usaga
