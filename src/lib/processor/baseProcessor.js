@@ -33,7 +33,7 @@ class BaseProcessor {
   }
 
   createResult() {
-    return aggregate.groupBy(this.createObjects);
+    throw new Error('Not implemented');
   }
 
   parseGitLog(line) {

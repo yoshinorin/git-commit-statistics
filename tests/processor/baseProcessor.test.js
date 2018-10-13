@@ -21,3 +21,9 @@ test('Parse git log', () => {
     }
   )
 });
+
+test('Not implemented Exception', () => {
+  expect(ex = () => {
+    expect(baseProcessor.createResult())
+  }).toThrowError('Not implemented');
+});
