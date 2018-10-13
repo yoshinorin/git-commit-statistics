@@ -13,7 +13,16 @@ class ByPerMonth extends BaseProcessor {
   }
 
   createResult() {
-    return this.sort(aggregate.groupBy(this.createObjects(), 'month'));
+    const objects = aggregate.groupBy(this.createObjects(), 'month');
+    // Re-Create object for sort order
+    let reCreatedObject = objects.map(x => {
+      return {
+        id: x.id,
+        month: x.month,
+        count: x.count
+      };
+    });
+    return this.sort(reCreatedObject);
   }
 
   sort(list) {
