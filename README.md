@@ -34,7 +34,7 @@ const options = {
   author: 'YoshinoriN',
   since: '2017-01-01',
   after: '2018-01-01',
-  n: 100,
+  maxCount: 100,
   noMerges: true
 };
 let result = cs.getByPerDayOfMonth(options);
