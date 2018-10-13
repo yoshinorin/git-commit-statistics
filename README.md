@@ -7,7 +7,7 @@ Get commit log statistics of git repository.
 
 ## Features
 
-Can get belows statistics. Example is [here](#getbyperdayofmonth).
+Can get belows statistics. Examples of result are [here](#examples-of-result).
 
 * byPerDayOfMonth
 * byPerMonth
@@ -27,6 +27,8 @@ $ npm install git-commit-statistics
 const CommitStatistics = require('git-commit-statistics');
 
 const cs = new CommitStatistics('<yourRepositoryPath>/.git');
+
+//No options
 let result = cs.getByPerDayOfMonth();
 
 //With options
@@ -52,8 +54,17 @@ All available methods are belows.
 
 ### Options
 
+Input argument to each method. Example is below.
+
+```js
+const options = {
+  author: 'YoshinoriN',
+  maxCount: 100
+};
+let result = cs.getByPerDayOfMonth(options);
+```
+
 Allowable options for each methods argument.
-Please see [official git document](https://git-scm.com/docs/git-log#_options).
 
 |name|type|example|
 |---|---|---|
@@ -64,6 +75,8 @@ Please see [official git document](https://git-scm.com/docs/git-log#_options).
 |before|`string`|'2018-01-01'|
 |maxCount|`number`|100|
 |noMerges|`boolean`|true|
+
+Please see [official git document](https://git-scm.com/docs/git-log#_options) what is mean.
 
 ## Examples of Result
 
