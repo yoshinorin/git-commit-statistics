@@ -8,7 +8,8 @@ const monthTypes = require('../types/monthsTypes');
 const util = require('../utils');
 
 class ByPerMonth extends BaseProcessor {
-  constructor(path, commandType, options) {
+  constructor(path, options) {
+    console.log(options);
     super(path, command.type.byPerMonth, options);
   }
 
