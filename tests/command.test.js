@@ -14,11 +14,11 @@ test('Create basic command with option', () => {
         author: "YoshinoriN",
         since: '2017-01-01',
         after: '2018-01-01',
-        n: 10,
+        maxCount: 10,
         noMerges: true
       }
     )
-  ).toBe("git --git-dir /test/example/.git log --author=\"YoshinoriN\" --since=\"2017-01-01\" --after=\"2018-01-01\" -n=\"10\" --no-merges --oneline --pretty=format:\"%cd\" --reverse");
+  ).toBe("git --git-dir /test/example/.git log --author=\"YoshinoriN\" --since=\"2017-01-01\" --after=\"2018-01-01\" --max-count=\"10\" --no-merges --oneline --pretty=format:\"%cd\" --reverse");
 });
 
 test('Create basic command with noMerges false', () => {
@@ -30,11 +30,11 @@ test('Create basic command with noMerges false', () => {
         author: "YoshinoriN",
         since: '2017-01-01',
         after: '2018-01-01',
-        n: 10,
+        maxCount: 10,
         noMerges: false
       }
     )
-  ).toBe("git --git-dir /test/example/.git log --author=\"YoshinoriN\" --since=\"2017-01-01\" --after=\"2018-01-01\" -n=\"10\" --oneline --pretty=format:\"%cd\" --reverse");
+  ).toBe("git --git-dir /test/example/.git log --author=\"YoshinoriN\" --since=\"2017-01-01\" --after=\"2018-01-01\" --max-count=\"10\" --oneline --pretty=format:\"%cd\" --reverse");
 });
 
 test('Create basic shortlog command', () => {
