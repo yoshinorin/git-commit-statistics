@@ -5,10 +5,10 @@
 coverage/
 tests/
 exectest.js
+jest.confing.js
 .travis.yml
 .editorconfig
 .eslintrc.yml
 .eslintignore
-.jest.confing.js
 *.log
 .DS_Store
