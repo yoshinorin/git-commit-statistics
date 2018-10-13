@@ -42,11 +42,11 @@ All available methods are belows.
 
 |name|options|result|
 |---|---|---|
-|getByPerDayOfMonth()|[Options](#Options)|[example](#getByPerDayOfMonth)|
-|getByPerMonth()|[Options](#Options)|[example](#getByPerMonth)|
-|getByPerWeekDay()|[Options](#Options)|[example](#getByPerWeekDay)|
-|getByPerYear()|[Options](#Options)|[example](#getByPerYear)|
-|getByDayHour()|[Options](#Options)|[example](#getByDayHour)|
+|getByPerDayOfMonth()|[Options](#options)|[example](#getbyperdayofmonth)|
+|getByPerMonth()|[Options](#options)|[example](#getbypermonth)|
+|getByPerWeekDay()|[Options](#options)|[example](#getbyperweekday)|
+|getByPerYear()|[Options](#options)|[example](#getbyperyear)|
+|getByDayHour()|[Options](#options)|[example](#getbydayhour)|
 
 ### Options
 
