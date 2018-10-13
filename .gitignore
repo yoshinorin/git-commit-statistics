@@ -18,3 +18,5 @@ Thumbs.db
 
 /package-lock.json
 /coverage/*
+
+exectest.js

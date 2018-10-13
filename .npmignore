@@ -4,6 +4,7 @@
 .vscode/
 coverage/
 tests/
+exectest.js
 .travis.yml
 .editorconfig
 .eslintrc.yml
