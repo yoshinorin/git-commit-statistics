@@ -3,11 +3,11 @@
 [![NPM version](https://badge.fury.io/js/git-commit-statistics.svg)](https://www.npmjs.com/package/git-commit-statistics)
 [![Build Status](https://travis-ci.org/YoshinoriN/git-commit-statistics.svg?branch=master)](https://travis-ci.org/YoshinoriN/git-commit-statistics) [![Coverage Status](https://coveralls.io/repos/github/YoshinoriN/git-commit-statistics/badge.svg?branch=master)](https://coveralls.io/github/YoshinoriN/git-commit-statistics?branch=master)
 
-Get commits statistics about git repository.
+Get commit log statistics of git repository.
 
 ## Features
 
-Get belows statistics. Example is [here](#getbyperdayofmonth).
+Can get belows statistics. Example is [here](#getbyperdayofmonth).
 
 * byPerDayOfMonth
 * byPerMonth
