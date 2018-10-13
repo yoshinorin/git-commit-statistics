@@ -11,7 +11,7 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "eslint": "node ./node_modules/eslint/bin/eslint"
+    "eslint": "eslint ."
   },
   "dependencies": {
     "lodash": "4.17.11"
