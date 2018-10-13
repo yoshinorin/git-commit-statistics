@@ -44,6 +44,10 @@ const type = {
     type: statisticsTypes.BY_PER_YEAR,
     commandBase: COMMAND_BASE_TYPE.BASIC
   },
+  byPerDayHour: {
+    type: statisticsTypes.BY_PER_DAY_HOUR,
+    commandBase: COMMAND_BASE_TYPE.BASIC
+  },
   summaryByAuthor: {
     type: statisticsTypes.SUMMARY_BY_AUTHOR,
     commandBase: COMMAND_BASE_TYPE.SHORTLOG

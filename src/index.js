@@ -39,6 +39,11 @@ class CommitStatistics {
     const instance = processorFactory.createInstance(this._path, statisticsTypes.BY_PER_YEAR, options);
     return instance.createResult();
   }
+
+  getByDayHour(options) {
+    const instance = processorFactory.createInstance(this._path, statisticsTypes.BY_PER_DAY_HOUR, options);
+    return instance.createResult();
+  }
 }
 
 module.exports = CommitStatistics;
