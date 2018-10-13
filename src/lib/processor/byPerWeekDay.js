@@ -3,6 +3,9 @@
 const aggregate = require('../aggregate');
 const BaseProcessor = require('./baseProcessor');
 const command = require('../command');
+const weekdayTypes = require('../types/weekdayTypes');
+const util = require('../utils');
+const _ = require('lodash');
 
 class ByPerWeekDay extends BaseProcessor {
 
@@ -12,6 +15,15 @@ class ByPerWeekDay extends BaseProcessor {
 
   createResult() {
     return aggregate.groupBy(this.createObjects(), 'dayOfWeek');
+  }
+
+  createResult() {
+    return this.sort(aggregate.groupBy(this.createObjects(), 'dayOfWeek'));
+  }
+
+  sort(list) {
+    let mappedList = util.typeMapper(list, 'dayOfWeek', weekdayTypes.weekday);
+    return _.sortBy(mappedList, 'id');
   }
 
   parseGitLog(line) {

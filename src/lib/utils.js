@@ -8,6 +8,15 @@ function toArray(line, separator) {
   return str.split(separator);
 }
 
+function typeMapper(list, key, types) {
+  return list.map(x => {
+    let obj = types.find(t => t.key === x[key]);
+    x.id = obj.value;
+    return x;
+  });
+}
+
 module.exports = {
-  toArray: toArray
+  toArray: toArray,
+  typeMapper: typeMapper
 };
