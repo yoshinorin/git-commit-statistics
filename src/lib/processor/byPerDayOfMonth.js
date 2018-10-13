@@ -17,7 +17,7 @@ class ByPerDayOfMonth extends BaseProcessor {
   parseGitLog(line) {
     const arr = line.match(/\S+/g);
     return {
-      day: arr[2]
+      day: parseInt(arr[2])
     }
   }
 

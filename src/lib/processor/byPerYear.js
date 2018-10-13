@@ -17,7 +17,7 @@ class ByPerYear extends BaseProcessor {
   parseGitLog(line) {
     const arr = line.match(/\S+/g);
     return {
-      year: arr[4]
+      year: parseInt(arr[4])
     }
   }
 
