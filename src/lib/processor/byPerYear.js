@@ -3,6 +3,7 @@
 const aggregate = require('../aggregate');
 const BaseProcessor = require('./baseProcessor');
 const command = require('../command');
+const _ = require('lodash');
 
 class ByPerYear extends BaseProcessor {
 
@@ -11,7 +12,11 @@ class ByPerYear extends BaseProcessor {
   }
 
   createResult() {
-    return aggregate.groupBy(this.createObjects(), 'year');
+    return this.sort(aggregate.groupBy(this.createObjects(), 'year'));
+  }
+
+  sort(list) {
+    return _.sortBy(list, 'year');
   }
 
   parseGitLog(line) {

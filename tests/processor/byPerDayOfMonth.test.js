@@ -17,3 +17,22 @@ test('Parse git log', () => {
     }
   )
 });
+
+const days = [
+  { day: 2, count: 2 },
+  { day: 1, count: 2 },
+  { day: 10, count: 2 },
+  { day: 20, count: 2 },
+]
+
+test('byPerYear sort', () => {
+  expect(processor.sort(days))
+  .toEqual(
+    [
+      { day: 1, count: 2 },
+      { day: 2, count: 2 },
+      { day: 10, count: 2 },
+      { day: 20, count: 2 },
+    ]
+  )
+});

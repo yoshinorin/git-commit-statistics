@@ -3,6 +3,7 @@
 const aggregate = require('../aggregate');
 const BaseProcessor = require('./baseProcessor');
 const command = require('../command');
+const _ = require('lodash');
 
 class ByPerDayOfMonth extends BaseProcessor {
 
@@ -11,7 +12,11 @@ class ByPerDayOfMonth extends BaseProcessor {
   }
 
   createResult() {
-    return aggregate.groupBy(this.createObjects(), 'day');
+    return this.sort(aggregate.groupBy(this.createObjects(), 'day'));
+  }
+
+  sort(list) {
+    return _.sortBy(list, 'day');
   }
 
   parseGitLog(line) {
