@@ -25,7 +25,7 @@ const days = [
   { day: 20, count: 2 },
 ]
 
-test('byPerYear sort', () => {
+test('byPerDayOfMonth sort', () => {
   expect(processor.sort(days))
   .toEqual(
     [
