@@ -1,5 +1,6 @@
 # git-commit-statistics
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/700d8374e80a46e5b14e1b180e385507)](https://app.codacy.com/app/YoshinoriN/git-commit-statistics?utm_source=github.com&utm_medium=referral&utm_content=YoshinoriN/git-commit-statistics&utm_campaign=Badge_Grade_Settings)
 [![NPM version](https://badge.fury.io/js/git-commit-statistics.svg)](https://www.npmjs.com/package/git-commit-statistics)
 [![Build Status](https://travis-ci.org/YoshinoriN/git-commit-statistics.svg?branch=master)](https://travis-ci.org/YoshinoriN/git-commit-statistics) [![Coverage Status](https://coveralls.io/repos/github/YoshinoriN/git-commit-statistics/badge.svg?branch=master)](https://coveralls.io/github/YoshinoriN/git-commit-statistics?branch=master)
 
