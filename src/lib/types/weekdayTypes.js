@@ -39,8 +39,12 @@ function getKeyNames() {
   return arr;
 };
 
+function getValueByKeyName(name) {
+  return weekday.find(x => x.key === name)['value'];
+}
 
 module.exports = {
   weekday,
-  getKeyNames
+  getKeyNames,
+  getValueByKeyName
 };
