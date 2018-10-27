@@ -27,6 +27,7 @@
     "eslint": "eslint ."
   },
   "dependencies": {
+    "lodash.groupby": "4.6.0",
     "lodash.sortby": "4.7.0"
   },
   "devDependencies": {
