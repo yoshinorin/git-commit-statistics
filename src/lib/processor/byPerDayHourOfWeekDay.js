@@ -36,10 +36,11 @@ class ByPerDayHour extends BaseProcessor {
     const byWeekDaysArray = toArray(byWeekdays);
     for (let i = 0, l = byWeekDaysArray.length; i < l; i++) {
       list.push({
+        id: weekdayTypes.getValueByKeyName(weekDayNames[i]),
         [weekDayNames[i]]: sortBy(aggregate.groupBy(byWeekDaysArray[i], 'hour'))
       });
     }
-    return list;
+    return sortBy(list, 'id');
   }
 
   parseGitLog(line) {
