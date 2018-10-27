@@ -28,7 +28,8 @@
   },
   "dependencies": {
     "lodash.groupby": "4.6.0",
-    "lodash.sortby": "4.7.0"
+    "lodash.sortby": "4.7.0",
+    "lodash.toarray": "4.4.0"
   },
   "devDependencies": {
     "coveralls": "3.0.2",
