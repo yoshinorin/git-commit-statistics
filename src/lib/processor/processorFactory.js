@@ -1,5 +1,6 @@
 'use strict';
 
+const ByPerDayHourOfWeekDay = require('./byPerDayHourOfWeekDay');
 const ByPerDayHour = require('./byPerDayHour');
 const ByPerDayOfMonth = require('./byPerDayOfMonth');
 const ByPerMonth = require('./byPerMonth');
@@ -9,6 +10,8 @@ const statisticsTypes = require('../types/statisticsTypes');
 
 function createInstance(gitDir, type, options) {
   switch (type) {
+    case statisticsTypes.BY_PER_DAY_HOUR_OF_WEEK_DAY:
+      return new ByPerDayHourOfWeekDay(gitDir, options);
     case statisticsTypes.BY_PER_DAY_HOUR:
       return new ByPerDayHour(gitDir, options);
     case statisticsTypes.BY_PER_DAY_OF_MONTH:

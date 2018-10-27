@@ -48,6 +48,10 @@ const type = {
     type: statisticsTypes.BY_PER_DAY_HOUR,
     commandBase: COMMAND_BASE_TYPE.BASIC
   },
+  byPerDayHourOfWeekDay: {
+    type: statisticsTypes.BY_PER_DAY_HOUR_OF_WEEK_DAY,
+    commandBase: COMMAND_BASE_TYPE.BASIC
+  },
   summaryByAuthor: {
     type: statisticsTypes.SUMMARY_BY_AUTHOR,
     commandBase: COMMAND_BASE_TYPE.SHORTLOG
