@@ -31,6 +31,16 @@ const weekday = [
   }
 ];
 
+function getKeyNames() {
+  let arr = [];
+  weekday.forEach((x) => {
+    arr.push(x.key);
+  });
+  return arr;
+};
+
+
 module.exports = {
-  weekday
+  weekday,
+  getKeyNames
 };
