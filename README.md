@@ -52,6 +52,7 @@ All available methods are belows.
 |getByPerWeekDay()|[Options](#options)|[example](#getbyperweekday)|
 |getByPerYear()|[Options](#options)|[example](#getbyperyear)|
 |getByDayHour()|[Options](#options)|[example](#getbydayhour)|
+|getByDayHourOfWeekDay()|[Options](#options)|[example](#getbydayhourofweekday)|
 
 ### Options
 
@@ -131,6 +132,37 @@ Example result of each methods.
 ...
   { hour: 22, count: 987 },
   { hour: 23, count: 938 } ]
+```
+
+### getByDayHourOfWeekDay
+
+```js
+{ id: 0,
+  Sun:
+   [ { hour: 11, count: 1 },
+     { hour: 12, count: 1 },
+     { hour: 23, count: 1 } ] }
+{ id: 1,
+  Mon:
+   [ { hour: 8, count: 1 },
+     { hour: 9, count: 3 },
+...
+     { hour: 20, count: 2 },
+     { hour: 21, count: 1 } ] }
+...
+{ id: 5,
+  Fri:
+   [ { hour: 5, count: 4 },
+     { hour: 7, count: 2 },
+...
+     { hour: 21, count: 1 } ] }
+{ id: 6,
+  Sat:
+   [ { hour: 1, count: 2 },
+     { hour: 4, count: 1 },
+...
+     { hour: 20, count: 1 },
+     { hour: 21, count: 2 } ] }
 ```
 
 ## License

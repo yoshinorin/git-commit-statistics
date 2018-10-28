@@ -1,6 +1,6 @@
 {
   "name": "git-commit-statistics",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "Get commit log statistics of git repository",
   "main": "./src/index.js",
   "license": "MIT",
