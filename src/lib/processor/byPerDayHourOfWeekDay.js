@@ -37,7 +37,7 @@ class ByPerDayHour extends BaseProcessor {
     for (let i = 0, l = byWeekDaysArray.length; i < l; i++) {
       list.push({
         id: weekdayTypes.getValueByKeyName(weekDayNames[i]),
-        [weekDayNames[i]]: sortBy(aggregate.groupBy(byWeekDaysArray[i], 'hour'))
+        [weekDayNames[i]]: sortBy(aggregate.groupBy(byWeekDaysArray[i], 'hour'), 'hour')
       });
     }
     return sortBy(list, 'id');
