@@ -15,6 +15,7 @@ Can get belows statistics. Examples of result are [here](#examples-of-result).
 * byPerWeekDays
 * byPerYear
 * byPerDayHour
+* byDayHourOfWeekDay
 
 ## Installation
 
