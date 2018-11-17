@@ -5,6 +5,7 @@ const ByPerMonth = require('../../src/lib/processor/byPerMonth');
 const ByPerWeekDay = require('../../src/lib/processor/byPerWeekDay');
 const ByPerYear = require('../../src/lib/processor/byPerYear');
 const ByPerDayHour = require('../../src/lib/processor/byPerDayHour');
+const ByPerDayHourOfWeekDay = require('../../src/lib/processor/byPerDayHourOfWeekDay');
 
 test('Repositry required Exception', () => {
   expect(ex = () => {
@@ -30,5 +31,9 @@ test('Create instance of ByPerYear', () => {
 
 test('Create instance of ByPerDayHour', () => {
   expect(factory.createInstance('test', statisticsTypes.BY_PER_DAY_HOUR)).toBeInstanceOf(ByPerDayHour);
+});
+
+test('Create instance of ByPerDayHourOfWeekDay', () => {
+  expect(factory.createInstance('test', statisticsTypes.BY_PER_DAY_HOUR_OF_WEEK_DAY)).toBeInstanceOf(ByPerDayHourOfWeekDay);
 });
 
