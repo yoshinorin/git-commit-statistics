@@ -34,7 +34,7 @@
   "devDependencies": {
     "coveralls": "3.0.3",
     "eslint": "5.15.1",
-    "jest": "24.1.0"
+    "jest": "24.6.0"
   },
   "engines": {
     "node": "8 || 10"
