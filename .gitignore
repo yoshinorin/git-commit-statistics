@@ -16,7 +16,7 @@ Thumbs.db
 **/node_modules/*
 **/dist/*
 
-/package-lock.json
+yarn.lock
 /coverage/*
 
 exectest.js
