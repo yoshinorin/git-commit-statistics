@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "coveralls": "3.0.7",
-    "eslint": "6.5.1",
+    "eslint": "6.6.0",
     "jest": "24.9.0"
   },
   "engines": {
